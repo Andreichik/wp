@@ -25,7 +25,8 @@
 					<div class="item-image"><img src="<?php echo $photo[0]; ?>" alt="<?php the_title(); ?>"></div>
 					<div class="item-header">
 						<a href="<?php the_permalink(); ?>" class="item-header-text item-header-color"><?php the_title(); ?></a>
-						<span class="item-comments-text item-header-color">2</span>
+						<!--<span class="item-comments-text item-header-color">2</span>-->
+						<a  href='<?php the_permalink(); ?>#kament_comments' class="item-comments-text item-header-color"></a>
 						<a href="#" class="item-comments-img"></a>
 						<span class="item-likes-text item-header-color">5</span>
 						<a href="#" class="item-likes-img"></a>
@@ -45,4 +46,18 @@
 		<div id="wrapper-clear"></div>
 	</div>
 </section>
+<!-- KAMENT -->
+<script type="text/javascript">
+	/* * * НАСТРОЙКА * * */
+	var kament_subdomain = 'wptest';
+
+	/* * * НЕ МЕНЯЙТЕ НИЧЕГО НИЖЕ ЭТОЙ СТРОКИ * * */
+	(function () {
+		var node = document.createElement('script'); node.type = 'text/javascript'; node.async = true;
+		node.src = 'http://' + kament_subdomain + '.svkament.ru/js/counter.js';
+		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(node);
+	}());
+</script>
+<noscript>Для отображения комментариев нужно включить Javascript</noscript>
+<!-- /KAMENT -->
 <?php get_footer(); ?>

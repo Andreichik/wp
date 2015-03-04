@@ -258,6 +258,9 @@ footer {
 	padding: 10px 0px 0 0px;
 	/*background-color:orange;*/
 }
+.item-header a {
+	text-decoration: none;
+}
 .item-header-text {
 	font-size: 16px;
 	/*font-weight: bold;*/
@@ -412,6 +415,14 @@ div.about-text p{
 .about-projects {
 	/*border: 1px solid red;*/
 }
+.about-projects ::-webkit-scrollbar {
+  width: 10px;
+}
+.about-projects  ::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9;
+  border-radius: 5px;
+}
+
 div.about-projects div{
 /*border: 1px solid orange;*/
 	height: 225px;
@@ -518,4 +529,12 @@ div.project-author  a:hover {
 }
 #feedback input.button:active {
 	padding-top: 5px;
+}
+
+/* комментарии */
+#kament_comments {
+	margin-top: 20px;
+}
+#kament_comments > a {
+	color: #fffff0;
 }

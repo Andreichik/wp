@@ -4,65 +4,59 @@
 	get_header();
 ?>
     <div id="wrapper-main">
-			<div class="category-block c-block1">
+		<?php
+			$num = 0;
+			$custom_query = 'posts_query';
+			$args = array(
+				'post_type' => 'post',
+				'posts_per_page' => -1,
+				'category_name' => 'projects'
+			);
+			${$custom_query} = new WP_Query( $args );
+			while ( ${$custom_query}->have_posts() ) : ${$custom_query}->the_post();
+		?>
+		<?php
+			$photo = get_post_custom_values('thumbnail');
+			$content = get_the_content('читать дальше');
+		?>
+			<div class="category-block c-block<?php echo ($num++ % 2) + 1;?>">
 				<div class="block-content">
-					<div class="item-image"><img src="<?php echo get_template_directory_uri(); ?>/images/tmp/category_bg.png" alt="img 1"></div>
+					<div class="item-image"><img src="<?php echo $photo[0]; ?>" alt="<?php the_title(); ?>"></div>
 					<div class="item-header">
-						<a href="project.html" class="item-header-text item-header-color">Двухкомнатные квартиры</a>
-						<span class="item-comments-text item-header-color">2</span>
+						<a href="<?php the_permalink(); ?>" class="item-header-text item-header-color"><?php the_title(); ?></a>
+						<a  href='<?php the_permalink(); ?>#kament_comments' class="item-comments-text item-header-color"></a>
 						<a href="#" class="item-comments-img"></a>
 						<span class="item-likes-text item-header-color">5</span>
 						<a href="#" class="item-likes-img"></a>
 					</div>
 					
 					<div class="item-content item-text-color">
-						Проект двухкомнатной квартиры, расположенной по адресу...
-						<a href="project.html" class="item-text-color">читать дальше</a>
+						<?php echo $content; ?>
 					</div>
 					
 					<div class="item-share"><a href="#" class="item-text-color">поделиться</a></div>
 				</div>
 			</div>
-			<div class="category-block c-block2">
-				<div class="block-content">
-					<div class="item-image"><img src="<?php echo get_template_directory_uri(); ?>/images/tmp/category_bg.png" alt="img 1"></div>
-					<div class="item-header">
-						<a href="project.html" class="item-header-text item-header-color">Трёххкомнатные квартиры</a>
-						<span class="item-comments-text item-header-color">3</span>
-						<a href="#" class="item-comments-img"></a>
-						<span class="item-likes-text item-header-color">7</span>
-						<a href="#" class="item-likes-img"></a>
-					</div>
-					
-					<div class="item-content item-text-color">
-						Проект двухкомнатной квартиры, расположенной по адресу...
-						<a href="project.html" class="item-text-color">читать дальше</a>
-					</div>
-					
-					<div class="item-share"><a href="#" class="item-text-color">поделиться</a></div>
-				</div>
-			</div>
-			<div class="category-block c-block1">
-				<div class="block-content">
-					<div class="item-image"><img src="<?php echo get_template_directory_uri(); ?>/images/tmp/category_bg.png" alt="img 1"></div>
-					<div class="item-header">
-						<a href="project.html" class="item-header-text item-header-color">Однокомнатные квартиры</a>
-						<span class="item-comments-text item-header-color">11</span>
-						<a href="#" class="item-comments-img"></a>
-						<span class="item-likes-text item-header-color">25</span>
-						<a href="#" class="item-likes-img"></a>
-					</div>
-					
-					<div class="item-content item-text-color">
-						Проект двухкомнатной квартиры, расположенной по адресу...
-						<a href="project.html" class="item-text-color">читать дальше</a>
-					</div>
-					
-					<div class="item-share"><a href="#" class="item-text-color">поделиться</a></div>
-				</div>
-			</div>
+		<?php
+			endwhile;
+			wp_reset_postdata();
+		?>
 		<div id="wrapper-clear"></div>
 	</div>
+	<!-- KAMENT -->
+	<script type="text/javascript">
+		/* * * НАСТРОЙКА * * */
+		var kament_subdomain = 'wptest';
+
+		/* * * НЕ МЕНЯЙТЕ НИЧЕГО НИЖЕ ЭТОЙ СТРОКИ * * */
+		(function () {
+			var node = document.createElement('script'); node.type = 'text/javascript'; node.async = true;
+			node.src = 'http://' + kament_subdomain + '.svkament.ru/js/counter.js';
+			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(node);
+		}());
+	</script>
+	<noscript>Для отображения комментариев нужно включить Javascript</noscript>
+	<!-- /KAMENT -->
 	
 	<script type="text/javascript">
 		$( document ).ready(function(){

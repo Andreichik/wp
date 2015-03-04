@@ -1,6 +1,6 @@
 <?php
-
   $post = $wp_query->post;
+  //print_r($post);exit;
   if (in_category('authors')) {
       include(TEMPLATEPATH.'/single-author.php');
   } elseif (in_category('projects')) {

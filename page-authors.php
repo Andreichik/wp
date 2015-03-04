@@ -6,20 +6,6 @@
 <section>
     <div id="wrapper">
 	<?php
-/*	$args = array(
-	'post_type' => 'post',
-	//'category_name' => 'authors'
-);
-$query = new WP_Query;
-$my_posts = $query->query($args);
-
-foreach( $my_posts as $my_post ){
-	echo '<p>'. $my_post->post_title .'</p>';
-	echo '<pre>';
-	print_r(get_the_category($my_post->ID));
-	echo '</pre>';
-}*/
-
 		$num = 0;
 		$custom_query = 'posts_query';
 		$args = array(
