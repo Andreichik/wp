@@ -339,12 +339,12 @@ footer {
 .category-block:hover div.item-share a { color: #74d1f6; }
 .category-block:hover div.item-share a:hover { color: white; }
 
-.category-block:hover a.item-likes-img {
+.category-block:hover i.item-likes-img {
 	background-image: url(images/like-da.png);
 	background-repeat: no-repeat;
 	background-position: -15px 0px;
 }
-.category-block:hover a.item-comments-img {
+.category-block:hover i.item-comments-img {
 	background-image: url(images/comment-da.png);
 	background-repeat: no-repeat;
 	background-position: -16px 0px;
@@ -415,15 +415,8 @@ div.about-text p{
 .about-projects {
 	/*border: 1px solid red;*/
 }
-.about-projects ::-webkit-scrollbar {
-  width: 10px;
-}
-.about-projects  ::-webkit-scrollbar-thumb {
-  background-color: #c9c9c9;
-  border-radius: 5px;
-}
 
-div.about-projects div{
+div.about-projects div.about-projects-item{
 /*border: 1px solid orange;*/
 	height: 225px;
 	/*overflow-y: scroll;*/
@@ -472,6 +465,7 @@ div.project-author  a:hover {
 .project-info {
 	color: #00aeef;
 	margin-top: 50px;
+	margin-bottom: 10px;
 }
 
 #project-img {

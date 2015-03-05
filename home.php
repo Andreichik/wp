@@ -24,10 +24,12 @@
 					<div class="item-image"><img src="<?php echo $photo[0]; ?>" alt="<?php the_title(); ?>"></div>
 					<div class="item-header">
 						<a href="<?php the_permalink(); ?>" class="item-header-text item-header-color"><?php the_title(); ?></a>
-						<a  href='<?php the_permalink(); ?>#kament_comments' class="item-comments-text item-header-color"></a>
-						<a href="#" class="item-comments-img"></a>
-						<span class="item-likes-text item-header-color">5</span>
-						<a href="#" class="item-likes-img"></a>
+						<!--<span class="item-comments-text item-header-color">2</span>-->
+						<a  href='<?php the_permalink(); ?>#kament_comments' class="item-comments-text item-header-color">0</a>
+						<i class="item-comments-img"></i>
+						<a  href='<?php the_permalink(); ?>' class="item-likes-text item-header-color">5</a>
+						<!--<span class="item-likes-text item-header-color">5</span>-->
+						<i class="item-likes-img"></i>
 					</div>
 					
 					<div class="item-content item-text-color">

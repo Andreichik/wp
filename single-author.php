@@ -33,7 +33,7 @@
 			<?php
 				if (count($projects) > 0) echo 'Проекты:<br />';
 
-				echo "<div>";
+				echo '<div class="about-projects-item">';
 				foreach ($projects as $project)
 				{
 					//$pro = get_post($project->ID);
@@ -48,6 +48,11 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$(document).ready(function() {
+			$('.about-projects-item').jScrollPane();
+		});
+	</script>
 
 <?php
 	wp_reset_postdata();

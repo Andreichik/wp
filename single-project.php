@@ -79,8 +79,9 @@
 				s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
 				var h=d[g]('body')[0];
 				h.appendChild(s);
-			  }})();</script>
-			<div id="share-button" style="display: none;" class="pluso" data-background="none;" data-options="small,square,line,horizontal,nocounter,sepcounter=1,theme=14" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
+			  }})();
+			</script>
+			<div id="share-button" style="display: none;" class="pluso" data-background="none;" data-options="small,square,line,horizontal,nocounter,sepcounter=1,theme=14" data-services="vkontakte,facebook,odnoklassniki,twitter"></div>
 		</div>
 	</div>
 <?php

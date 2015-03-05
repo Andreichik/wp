@@ -17,6 +17,12 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/fotorama.js"></script>
 	<?php }?>
 	
+	<?php if ($gPageName == "single-author") {?>
+	<link  href="<?php echo get_template_directory_uri(); ?>/styles/jquery.jscrollpane.css" rel="stylesheet">
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.jscrollpane.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.js"></script>
+	<?php }?>
+	
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
